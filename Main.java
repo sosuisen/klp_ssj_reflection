@@ -2,12 +2,15 @@ import module java.base;
 
 public class Main {
 
-    void main()
-            throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        Class<?> serverClass = Server.class;
-        IO.println("Server class name: " + serverClass.getName());
+    void main() throws Exception {
+        Class<?> clazz = Server.class;
+        IO.println("Server class name: " + clazz.getName());
 
-        Constructor<?>[] constructors = serverClass.getDeclaredConstructors();
+        launch(clazz);
+    }
+
+    void launch(Class<?> clazz) throws Exception {
+        Constructor<?>[] constructors = clazz.getDeclaredConstructors();
         for (var constructor : constructors) {
             IO.println("Constructor: " + constructor.getName());
         }
