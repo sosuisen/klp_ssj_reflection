@@ -6,21 +6,9 @@ public class Main {
         Class<?> clazz = Server.class;
         IO.println("Server class name: " + clazz.getName());
 
-        launch(clazz);
+        var server = new Server("HTTP Server");
+        Class<?> serverClass = server.getClass();
+        IO.println("Server class name: " + serverClass.getName());
     }
 
-    void launch(Class<?> clazz) throws Exception {
-        Constructor<?>[] constructors = clazz.getDeclaredConstructors();
-        for (var constructor : constructors) {
-            IO.println("Constructor: " + constructor.getName());
-        }
-
-        Class<?>[] parameterTypes = constructors[0].getParameterTypes();
-        for (var paramType : parameterTypes) {
-            IO.println("Parameter type: " + paramType.getName());
-        }
-
-        Server server = (Server) constructors[0].newInstance("HTTP Server");
-        server.start();
-    }
 }
