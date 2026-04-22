@@ -1,12 +1,12 @@
 public class Server {
-    private String name;
+    private String host;
 
-    public Server(String name) {
-        this.name = name;
+    public Server(String host) {
+        this.host = host;
         System.out.println("Server object is created");
     }
 
     public void start() {
-        System.out.println(name + " is starting...");
+        System.out.println(host + " is starting...");
     }
 }
