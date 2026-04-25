@@ -24,7 +24,7 @@ public class Main {
             IO.println("Parameter type: " + paramType.getName());
         }
 
-        Server server = (Server) constructors[0].newInstance("HTTP Server");
+        Server server = (Server) constructors[0].newInstance("localhost", 8080);
         server.start();
     }
 }
