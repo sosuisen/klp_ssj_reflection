@@ -6,7 +6,7 @@ public class Main {
         Class<?> clazz = Server.class;
         IO.println("Server class name: " + clazz.getName());
 
-        var server = new Server("HTTP Server");
+        var server = new Server("kcg");
         Class<?> serverClass = server.getClass();
         IO.println("Server class name: " + serverClass.getName());
     }
